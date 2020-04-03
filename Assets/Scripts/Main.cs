@@ -8,9 +8,10 @@ public class Main : MonoBehaviour
     // 現在の手順のインデックス
     private int index = 0;
 
-    // 折り鶴を作成する手順
+    // 折り鶴を作成する手順を格納します
     private Step[] steps = {
         new Step0(),  // 「折り紙」オブジェクトを作成します
+        new Wait(),   // 何か入力されるまで待機します 
         new Step1(),  // 45度回して頂点の1つを手前にします
         new Step2(),  // 「折り紙」を裏返します
         new Step3(),  // 奥の頂点が手前の頂点に重なるよう上まで移動します
@@ -34,7 +35,8 @@ public class Main : MonoBehaviour
         new Step19(), // 羽を開きます
         new Step20(), // くちばしを折ります
         new Step21(), // カメラを1周します
-        new LastStep()
+        new Wait(),   // 何か入力されるまで待機します 
+        new Reload()
     };
 
     // Start is called before the first frame update
